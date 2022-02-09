@@ -21,19 +21,12 @@
   </div>
 
   <!-- Card -->
-  <div class="card">
-    <div class="item" v-for="(product, i) in products" :key="i">
-      <img :src="product.image" alt="" />
-      <h3 @click="modalOpen = true">
-        {{ product.title }}
-      </h3>
-      <h4>{{ product.price.toLocaleString() }}원</h4>
-    </div>
-  </div>
+  <Card v-for="(product, i) in products" :key="i" :product="product" />
 </template>
 
 <script>
 import products from "./assets/products";
+import Card from "./Card.vue";
 
 export default {
   name: "App",
@@ -43,6 +36,9 @@ export default {
       products: products,
       modalOpen: false,
     };
+  },
+  components: {
+    Card: Card,
   },
 };
 </script>
