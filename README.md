@@ -1,24 +1,22 @@
-# real-estate-app
+# 부동산 쇼핑몰 웹앱
 
-## Project setup
-```
-npm install
-```
+## 프로젝트를 만들게 된 동기
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+내 집 마련의 꿈을 꾸며, 최근 주택청약에 넣는 금액을 늘렸다.
+이런 꿈이 생겼을 때 관련된 서비스를 만들면 재밌겠다 싶어 만들게 되었다.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 실행 방법
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 기능
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 회원가입, 로그인
+
+### 아파트 랭킹
+
+### 부동산 실거래가 조회
+
+### 부동산 실거래 정보 조회
+
+### API
+
+- [국토교통부_아파트매매 실거래자료]https://www.data.go.kr/data/15057511/openapi.do
