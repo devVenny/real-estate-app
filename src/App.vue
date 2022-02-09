@@ -1,6 +1,7 @@
 <template>
   <!-- Modal -->
-  <Modal />
+  <Modal :modalOpen="modalOpen" />
+
   <!--  HEADER-->
   <div class="header">
     <a href="" v-for="(menu, i) in menus" :key="i">{{ menu }}</a>
@@ -10,7 +11,12 @@
   <Banner />
 
   <!-- Card -->
-  <Card v-for="(product, i) in products" :key="i" :product="product" />
+  <Card
+    @modalOpen="modalOpen = true"
+    v-for="(product, i) in products"
+    :key="i"
+    :product="product"
+  />
 </template>
 
 <script>
@@ -23,7 +29,7 @@ export default {
   name: "App",
   data() {
     return {
-      modalOpen: true,
+      modalOpen: false,
       products: products,
       menus: ["Home", "Product", "Info", "Contact"],
     };
