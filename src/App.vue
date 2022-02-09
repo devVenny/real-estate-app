@@ -1,44 +1,37 @@
 <template>
   <!-- Modal -->
-  <div class="madal" v-if="modalOpen">
-    <div class="black-bg">
-      <div class="white-bg">
-        <img src="" alt="" />
-        <h3>제목</h3>
-        <h4>텍스트</h4>
-      </div>
-    </div>
-  </div>
-
+  <Modal />
   <!--  HEADER-->
   <div class="header">
     <a href="" v-for="(menu, i) in menus" :key="i">{{ menu }}</a>
   </div>
 
   <!-- BANNER -->
-  <div class="banner">
-    <h3>지금 결제하면 30% 할인!</h3>
-  </div>
+  <Banner />
 
   <!-- Card -->
   <Card v-for="(product, i) in products" :key="i" :product="product" />
 </template>
 
 <script>
-import products from "./assets/products";
 import Card from "./Card.vue";
+import Modal from "./Modal.vue";
+import Banner from "./Banner.vue";
+import products from "./assets/products";
 
 export default {
   name: "App",
   data() {
     return {
-      menus: ["Home", "Product", "Info", "Contact"],
+      modalOpen: true,
       products: products,
-      modalOpen: false,
+      menus: ["Home", "Product", "Info", "Contact"],
     };
   },
   components: {
-    Card: Card,
+    Card,
+    Modal,
+    Banner,
   },
 };
 </script>
