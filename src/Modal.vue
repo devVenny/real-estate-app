@@ -82,22 +82,6 @@ label {
   display: flex;
 }
 
-.modal--contract {
-  padding: 100px;
-}
-
-.modal--close-button {
-  color: #2c2d36;
-  background-color: #e1e2e2;
-}
-
-.modal--close-button:hover {
-  background-color: #c2c2c2;
-
-  transition: all 150ms linear;
-  opacity: 0.85;
-}
-
 /* Modal transition effect */
 .fade-enter-from {
   opacity: 0;

@@ -15,7 +15,9 @@
   </div>
 
   <!-- BANNER -->
-  <Banner />
+  <tranasition name="gone">
+    <Banner />
+  </tranasition>
 
   <!-- Card -->
   <Card
