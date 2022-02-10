@@ -1,6 +1,11 @@
 <template>
   <!-- Modal -->
-  <Modal :modalOpen="modalOpen" />
+  <Modal
+    :products="products"
+    :modalOpen="modalOpen"
+    :idx="idx"
+    @modalClose="modalOpen = false"
+  />
 
   <!--  HEADER-->
   <div class="header">
@@ -12,7 +17,10 @@
 
   <!-- Card -->
   <Card
-    @modalOpen="modalOpen = true"
+    @modalOpen="
+      modalOpen = true;
+      idx = $event;
+    "
     v-for="(product, i) in products"
     :key="i"
     :product="product"
@@ -29,6 +37,7 @@ export default {
   name: "App",
   data() {
     return {
+      idx: 0,
       modalOpen: false,
       products: products,
       menus: ["Home", "Product", "Info", "Contact"],
@@ -43,6 +52,18 @@ export default {
 </script>
 
 <style>
+:root {
+  /* color */
+  --color-dark-grass: #00a05e;
+  --color-light-grass: #79ffbc;
+  --color-grey: rgb(138, 138, 138);
+  --color-snow: #ffffff;
+  --color-smoke: #e4e4e4;
+  --color-grass: #3dd28d;
+  --color-light-grey: #e1e2e1;
+}
+
+/* Global */
 body {
   margin: 0;
 }
@@ -59,8 +80,16 @@ div {
   color: #2c3e50;
 }
 
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-light-grey);
+  margin: 7px 0;
+}
+
+/* Header */
 .header {
-  background-color: darkslateblue;
+  background-color: var(--color-dark-grass);
   width: 100%;
   padding: 20px;
 }
@@ -76,7 +105,7 @@ div {
 }
 
 .banner {
-  background-color: lightpink;
+  background-color: var(--color-light-grey);
   padding: 10px;
   margin-top: 30px;
 }
@@ -88,6 +117,8 @@ div {
 .item img {
   width: 100%;
 }
+
+/* MODAL */
 
 .black-bg {
   background: rgba(0, 0, 0, 0.5);
@@ -102,5 +133,52 @@ div {
   background: white;
   border-radius: 8px;
   padding: 20px;
+}
+/* modal close button */
+.button {
+  opacity: 0.8;
+  transition: opacity 300ms linear;
+  border-radius: 32px;
+
+  display: flex;
+  overflow: hidden;
+
+  margin: 10px auto;
+  padding: 10px 10px;
+  width: 80px;
+
+  cursor: pointer;
+  transition: all 150ms linear;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: none;
+  text-transform: capitalize;
+
+  color: #fff;
+  border: 0 none;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 2px 5px 10px var(--color-smoke);
+
+  color: var(--color-snow);
+  background: var(--color-grass);
+}
+
+.button:hover {
+  transition: all 150ms linear;
+  opacity: 0.85;
+}
+
+.button:hover {
+  color: #202129;
+  background-color: #e1e2e2;
+  opacity: 1;
 }
 </style>
