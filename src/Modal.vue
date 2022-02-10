@@ -82,6 +82,10 @@ label {
   display: flex;
 }
 
+.modal--contract {
+  padding: 100px;
+}
+
 .modal--close-button {
   color: #2c2d36;
   background-color: #e1e2e2;
@@ -94,7 +98,24 @@ label {
   opacity: 0.85;
 }
 
-.modal--contract {
-  width: 60%;
+/* Modal transition effect */
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all 0.3s;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: all 0.3s;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

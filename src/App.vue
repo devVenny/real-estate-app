@@ -1,11 +1,13 @@
 <template>
   <!-- Modal -->
-  <Modal
-    :products="products"
-    :modalOpen="modalOpen"
-    :idx="idx"
-    @modalClose="modalOpen = false"
-  />
+  <transition name="fade">
+    <Modal
+      :products="products"
+      :modalOpen="modalOpen"
+      :idx="idx"
+      @modalClose="modalOpen = false"
+    />
+  </transition>
 
   <!--  HEADER-->
   <div class="header">
@@ -145,7 +147,7 @@ div {
 
   margin: 10px auto;
   padding: 10px 10px;
-  width: 80px;
+  width: 130px;
 
   cursor: pointer;
   transition: all 150ms linear;
@@ -180,5 +182,21 @@ div {
   color: #202129;
   background-color: #e1e2e2;
   opacity: 1;
+}
+
+.modal--close-button {
+  color: #2c2d36;
+  background-color: #e1e2e2;
+}
+
+.modal--close-button:hover {
+  background-color: #c2c2c2;
+
+  transition: all 150ms linear;
+  opacity: 0.85;
+}
+
+.modal--contract {
+  width: 60%;
 }
 </style>
