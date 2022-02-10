@@ -1,13 +1,11 @@
 <template>
   <!-- Modal-->
-  <transition name="fade">
-    <Modal
-      :products="products"
-      :modalOpen="modalOpen"
-      :idx="idx"
-      @modalClose="modalOpen = false"
-    />
-  </transition>
+  <Modal
+    :products="products"
+    :modalOpen="modalOpen"
+    :idx="idx"
+    @modalClose="modalOpen = false"
+  />
 
   <!--  Header-->
   <div class="header">
@@ -48,7 +46,7 @@ export default {
   data() {
     return {
       idx: 0,
-      modalOpen: false,
+      modalOpen: true,
       initialProducts: [...products],
       products: [...products],
       menus: ["Home", "Product", "Info", "Contact"],
@@ -122,63 +120,7 @@ div {
   margin: 7px 0;
 }
 
-/* Header */
-.header {
-  background-color: var(--color-dark-grass);
-  width: 100%;
-  padding: 20px;
-}
-
-.header a {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  padding: 10px 5px;
-  margin-right: 20px;
-  border-radius: 2px;
-  font-weight: 600;
-}
-
-.banner {
-  background-color: var(--color-light-grey);
-  padding: 10px;
-  margin-top: 30px;
-}
-
-.item {
-  margin-top: 30px;
-}
-
-.item img {
-  width: 100%;
-}
-
-/* Sort buttons */
-.sort-container {
-  display: Flex;
-  padding: 10px;
-  width: 100%;
-}
-
-/* Modal */
-
-.black-bg {
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  padding: 100px;
-}
-
-.white-bg {
-  width: 100%;
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-}
-/* modal close button */
 .button {
-  opacity: 0.8;
   transition: opacity 300ms linear;
   border-radius: 32px;
 
@@ -221,6 +163,57 @@ div {
   color: #202129;
   background-color: #e1e2e2;
   opacity: 1;
+}
+
+/* Header */
+.header {
+  background-color: var(--color-dark-grass);
+  width: 100%;
+  padding: 20px;
+}
+
+.header a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 5px;
+  margin-right: 20px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* Banner */
+.banner {
+  background-color: var(--color-light-grey);
+  padding: 10px;
+  margin-top: 30px;
+}
+
+/* Modal */
+
+.black-bg {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.white-bg {
+  min-width: 500px;
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Sort buttons */
+.sort-container {
+  display: Flex;
+  padding: 10px;
+  width: 100%;
 }
 
 .modal--close-button {

@@ -27,4 +27,12 @@ export default {
 .product-title:hover {
   background-color: var(--color-light-grey);
 }
+
+.item {
+  margin-top: 30px;
+}
+
+.item img {
+  width: 100%;
+}
 </style>
