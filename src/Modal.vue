@@ -13,7 +13,7 @@
           placeholder="얼마나 지내실 건가요?"
           v-model.number="month"
         />
-        <label for="modal-input"> *최대 계약기간은 24개월 입니다. </label>
+        <label for="modal-input"> *최대 계약기간은 12개월 입니다. </label>
         <h4>
           {{ month }}개월 :
           {{ (products[idx].price * month).toLocaleString() }}원
@@ -51,11 +51,16 @@ export default {
         alert("숫자를 입력해주세요");
         this.month = 1;
       }
-      if (this.month >= 25) {
-        alert("24개월 이상은 계약할 수 없습니다.");
+      if (this.month >= 13) {
+        alert("13개월 이상은 계약 할 수 없습니다.");
         this.month = 1;
       }
     },
+  },
+  updated() {
+    if (this.month === 2) {
+      alert("2개월은 계약 할 수 없습니다.");
+    }
   },
 };
 </script>

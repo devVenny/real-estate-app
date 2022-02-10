@@ -67,7 +67,6 @@ export default {
     },
     alphabeticalSort() {
       this.products.sort(function (a, b) {
-        // 한글 오름차순
         return a.title.charAt(0) < b.title.charAt(0)
           ? -1
           : a.title.charAt(0) < b.title.charAt(0)
