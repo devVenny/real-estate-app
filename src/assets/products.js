@@ -1,7 +1,7 @@
 const products = [
   {
     id: 0,
-    title: " 신림동 역세권 30분 거리(2022 신축!)",
+    title: "신림동 역세권 30분 거리(2022 신축!)",
     image: "https://codingapple1.github.io/vue/room0.jpg",
     content: "18년 신축공사한 남향 원룸 ☀️, 공기청정기 제공",
     price: 340000,
@@ -25,7 +25,7 @@ const products = [
   },
   {
     id: 3,
-    title: "Double styled beds Studio Apt",
+    title: "더블 베드 스튜디오 아파트(전세O)",
     image: "https://codingapple1.github.io/vue/room3.jpg",
     content: "무암동인근 2인용 원룸입니다. 전세 전환가능",
     price: 550000,

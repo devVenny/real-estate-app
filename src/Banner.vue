@@ -1,7 +1,7 @@
 <template>
   <div class="banner" v-if="popUp === true">
     <h3>지금 결제하면 {{ discountPer }}% 할인!</h3>
-    <span>고민하실 수록 혜택이 줄어들어요🥲 서두르세요!</span>
+    <span>앗 혜택이 줄어들어요🥲 서두르세요!</span>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
         this.popUp = false;
         clearInterval(intervalID);
       }
-    }, 1000);
+    }, 2000);
   },
 };
 </script>
