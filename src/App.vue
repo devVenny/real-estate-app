@@ -1,11 +1,13 @@
 <template>
   <!-- Modal-->
-  <Modal
-    :products="products"
-    :modalOpen="modalOpen"
-    :idx="idx"
-    @modalClose="modalOpen = false"
-  />
+  <transition name="fade">
+    <Modal
+      :products="products"
+      :modalOpen="modalOpen"
+      :idx="idx"
+      @modalClose="modalOpen = false"
+    />
+  </transition>
 
   <!--  Header-->
   <div class="header">
