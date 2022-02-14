@@ -1,4 +1,13 @@
 <template>
+  <!-- Zoom button -->
+  <button @click="zoom(-1)" class="btn btn-outline-success">
+    <span class="material-icons"> zoom_in </span>
+  </button>
+  <button @click="zoom(1)" class="btn btn-outline-success">
+    <span class="material-icons"> zoom_out </span>
+  </button>
+
+  <!-- Map -->
   <KakaoMap :options="mapOption" />
 </template>
 
@@ -17,6 +26,12 @@ export default {
         level: 8,
       },
     };
+  },
+  methods: {
+    zoom(measure) {
+      const zoom = Math.max(3, this.mapOption.level + measure);
+      this.mapOption.level = zoom;
+    },
   },
   components: {
     KakaoMap,

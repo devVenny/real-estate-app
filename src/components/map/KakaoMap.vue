@@ -5,6 +5,11 @@
 <script>
 export default {
   name: "KakaoMap",
+  data() {
+    return {
+      mapInstance: null,
+    };
+  },
   props: {
     options: Object,
   },
@@ -14,11 +19,16 @@ export default {
     var container = this.$refs.map;
 
     const { center, level } = this.options;
-    const mapInstance = new kakao.maps.Map(container, {
+    this.mapInstance = new kakao.maps.Map(container, {
       center: new kakao.maps.LatLng(center.lat, center.lng),
       level: level,
     });
-    console.log(mapInstance);
+  },
+  watch: {
+    "options.level"(cur, prev) {
+      this.mapInstance.setLevel(cur);
+      console.log(`[data changed] : ${prev} => ${cur}`); // test
+    },
   },
 };
 </script>
