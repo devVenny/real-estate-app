@@ -9,10 +9,16 @@
     />
   </transition>
 
-  <!--  Header-->
+  <!--  Header -->
   <div class="header">
-    <a href="" v-for="(menu, i) in menus" :key="i">{{ menu }}</a>
+    <div class="header-nav">
+      <button @click="$router.push('/')">Home</button>
+      <button @click="$router.push('/product')">Product</button>
+    </div>
   </div>
+
+  <!-- Map -->
+  <router-view></router-view>
 
   <!-- Banner -->
   <Banner />
@@ -38,9 +44,9 @@
 </template>
 
 <script>
-import Card from "./Card.vue";
-import Modal from "./Modal.vue";
-import Banner from "./Banner.vue";
+import Card from "./components/views/Card.vue";
+import Modal from "./components/views/Modal.vue";
+import Banner from "./components/views/Banner.vue";
 import products from "./assets/products";
 
 export default {
@@ -101,6 +107,7 @@ export default {
 /* Global */
 body {
   margin: 0;
+  text-align: center;
 }
 
 div {
@@ -172,16 +179,23 @@ div {
   background-color: var(--color-dark-grass);
   width: 100%;
   padding: 20px;
+  display: flex;
 }
 
-.header a {
-  display: inline-block;
+.header .header-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header .header-nav button {
+  all: unset;
   color: white;
   text-decoration: none;
   padding: 10px 5px;
   margin-right: 20px;
   border-radius: 2px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 /* Banner */
