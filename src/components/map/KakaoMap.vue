@@ -3,6 +3,8 @@
 </template>
 
 <script>
+const kakao = window.kakao;
+
 export default {
   name: "KakaoMap",
   data() {
@@ -14,7 +16,7 @@ export default {
     options: Object,
   },
   mounted() {
-    const kakao = window.kakao;
+    const kakao = kakao || window.kakao;
 
     var container = this.$refs.map;
 
@@ -25,18 +27,14 @@ export default {
     });
   },
   watch: {
-    "options.level"(cur, prev) {
+    "options.level"(cur) {
       this.mapInstance.setLevel(cur);
-      console.log(`[data changed] : ${prev} => ${cur}`); // test
+    },
+    "options.center"(cur) {
+      this.mapInstance.setCenter(new kakao.maps.LatLng(cur.lat, cur.lng));
     },
   },
 };
 </script>
 
-<style>
-#map {
-  height: 60vh;
-  width: 60%;
-  margin: 0 auto;
-}
-</style>
+<style></style>
