@@ -15,19 +15,21 @@
         @click="showOnMap(harbor)"
         v-for="(harbor, i) in harbors"
         :key="i"
+        :class="{ active: harbor === activeHarbor }"
       >
         {{ harbor.place }}
       </div>
     </div>
 
     <!-- Map -->
-    <KakaoMap :options="mapOption" />
+    <KakaoMap ref="kmap" :options="mapOption" />
   </div>
 </template>
 
 <script>
-import KakaoMap from "../map/KakaoMap.vue";
 import api from "../../service/api";
+import KakaoMap from "../map/KakaoMap.vue";
+import MarkerHandler from "../map/marker-handler";
 
 export default {
   name: "Product",
@@ -41,6 +43,8 @@ export default {
         level: 8,
       },
       harbors: [],
+      marker: null,
+      activeHarbor: null,
     };
   },
   methods: {
@@ -56,11 +60,20 @@ export default {
     },
   },
   mounted() {
-    console.log(
-      api.harbor.all((res) => {
-        this.harbors = res.harbors;
-      })
-    );
+    const kmap = this.$refs.kmap;
+    this.markers = new MarkerHandler(kmap, {
+      markerClicked: (harbor) => {
+        this.activeHarbor = harbor;
+        console.log("[clicked]", harbor);
+      },
+    }); // data를 담은 생성자 함수 생성
+    api.harbor.all((res) => {
+      this.harbors = res.harbors;
+    });
+    // Create markers
+    this.markers.add(this.harbors, (harbor) => {
+      return { lat: harbor.lat, lng: harbor.lng };
+    });
   },
   components: {
     KakaoMap,
@@ -103,6 +116,11 @@ export default {
 
 .harbors .harbor:hover,
 .harbors .harbor:active {
+  background-color: var(--color-light-grass);
+  border: 1px solid var(--color-dark-grass);
+}
+
+.active {
   background-color: var(--color-light-grass);
   border: 1px solid var(--color-dark-grass);
 }
