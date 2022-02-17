@@ -53,6 +53,7 @@ export default {
       this.mapOption.level = zoom;
     },
     showOnMap(harbor) {
+      this.activeHarbor = harbor;
       this.mapOption.center = {
         lat: harbor.lat,
         lng: harbor.lng,
@@ -64,7 +65,6 @@ export default {
     this.markers = new MarkerHandler(kmap, {
       markerClicked: (harbor) => {
         this.activeHarbor = harbor;
-        console.log("[clicked]", harbor);
       },
     }); // data를 담은 생성자 함수 생성
     api.harbor.all((res) => {
@@ -84,7 +84,7 @@ export default {
 <style>
 :root {
   /* color */
-  --color-dark-grass: #00a05e;
+  --color-dark-grass: #028850;
   --color-light-grass: #79ffbc;
   --color-grey: rgb(138, 138, 138);
   --color-snow: #ffffff;
@@ -122,6 +122,6 @@ export default {
 
 .active {
   background-color: var(--color-light-grass);
-  border: 1px solid var(--color-dark-grass);
+  border: 5px solid var(--color-dark-grass);
 }
 </style>

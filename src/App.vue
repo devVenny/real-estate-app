@@ -15,9 +15,24 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "App",
+  created() {
+    axios
+      .get(
+        "https://cors-anywhere.herokuapp.com/http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?LAWD_CD=11110&DEAL_YMD=201512&serviceKey=gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l+kYKw4//BAA2yiTV6ZKub9g=="
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  },
 };
+
+// decode key : gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l+kYKw4//BAA2yiTV6ZKub9g==
+// edcode key : 	gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D
 </script>
 
 <style>
