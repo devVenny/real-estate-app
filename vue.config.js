@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: "/sub-route",
+  publicPath: "/",
   outputDir: "docs",
 };
