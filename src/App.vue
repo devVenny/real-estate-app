@@ -11,7 +11,13 @@
   <router-view></router-view>
 
   <!-- Footer -->
-  <h3>Footer 입니다.</h3>
+  <div class="footer">
+    <p>
+      <span>Author. devVenny</span><br />
+      <span>Email. hyungsup42134@gmail.com</span><br />
+      <span>Copyright 2020. devVenny. All Rights Reserved.</span>
+    </p>
+  </div>
 </template>
 
 <script>
@@ -189,5 +195,15 @@ div {
 
 .modal--contract {
   width: 60%;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-dark-grass);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  color: white;
 }
 </style>
