@@ -9,36 +9,44 @@
 
   <!-- Map -->
   <router-view></router-view>
-
-  <!-- Footer -->
-  <div class="footer">
-    <p>
-      <span>Author. devVenny</span><br />
-      <span>Email. hyungsup42134@gmail.com</span><br />
-      <span>Copyright 2020. devVenny. All Rights Reserved.</span>
-    </p>
-  </div>
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "App",
+  data() {
+    return {
+      datas: [],
+    };
+  },
   created() {
-    axios
-      .get(
-        "https://cors-anywhere.herokuapp.com/http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?LAWD_CD=11110&DEAL_YMD=201512&serviceKey=gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D"
-      )
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+    // const date = new Date();
+    // const year = date.getFullYear();
+    // const month = () => {
+    //   const month = date.getMonth();
+    //   return month < 10 ? `0${month}` : `${month}`;
+    // };
+    // const DEAL_YMD = year + month();
+    // axios
+    //   .get(
+    //     `https://cors-anywhere.herokuapp.com/http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?LAWD_CD=11110&DEAL_YMD=${DEAL_YMD}&serviceKey=gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D`
+    //   )
+    //   .then((res) => {
+    //     this.datas = res.data.response;
+    //   })
+    //   .catch((err) => console.log(err));
+  },
+  computed: {
+    myProps() {
+      if (this.$route.name === "/") {
+        return { datas: this.datas };
+      }
+      return { datas: this.datas };
+    },
   },
 };
-
-// decode key : gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l+kYKw4//BAA2yiTV6ZKub9g==
-// edcode key : 	gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D
 </script>
 
 <style>
@@ -195,15 +203,5 @@ div {
 
 .modal--contract {
   width: 60%;
-}
-
-/* Footer */
-.footer {
-  background-color: var(--color-dark-grass);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  color: white;
 }
 </style>

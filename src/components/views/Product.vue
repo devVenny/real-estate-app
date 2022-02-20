@@ -6,7 +6,7 @@
   <button @click="zoom(1)" class="btn btn-outline-success">
     <span class="material-icons"> zoom_out </span>
   </button>
-  .
+
   <div class="map-area">
     <!-- Harbor List -->
     <div class="harbors">
@@ -45,7 +45,12 @@ export default {
       harbors: [],
       marker: null,
       activeHarbor: null,
+      items: null,
+      locationName: "",
     };
+  },
+  props: {
+    datas: Object,
   },
   methods: {
     zoom(measure) {
@@ -74,9 +79,18 @@ export default {
     this.markers.add(this.harbors, (harbor) => {
       return { lat: harbor.lat, lng: harbor.lng };
     });
+    this.emitter.on("sendInputValue", (inputValue) => {
+      this.locationName = inputValue;
+      console.log(this.locationName);
+    });
   },
   components: {
     KakaoMap,
+  },
+  watch: {
+    locationName: function (val) {
+      console.log(val);
+    },
   },
 };
 </script>
