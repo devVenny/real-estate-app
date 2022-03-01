@@ -1,5 +1,5 @@
 # 부동산 쇼핑몰 웹앱
-
+![https://user-images.githubusercontent.com/78582073/156260999-833035f1-2114-4ff5-84b1-e3e169d40cc9.png](https://user-images.githubusercontent.com/78582073/156260999-833035f1-2114-4ff5-84b1-e3e169d40cc9.png)
 - vue.js를 이용하여 만든 간단한 부동산 정보 조회 웹페이지
 
 ## 컴포넌트
