@@ -87,11 +87,6 @@ export default {
   components: {
     KakaoMap,
   },
-  watch: {
-    locationName: function (val) {
-      console.log(val);
-    },
-  },
 };
 </script>
 
