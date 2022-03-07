@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 export default {
   name: "App",
   data() {
@@ -51,14 +50,6 @@ body {
 
 div {
   box-sizing: border-box;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 .divider {
@@ -115,10 +106,12 @@ div {
 
 /* Header */
 .header {
-  background-color: var(--color-dark-grass);
   width: 100%;
   padding: 20px;
   display: flex;
+  position: absolute;
+  top: 0;
+  z-index: 100;
 }
 
 .header .header-nav {

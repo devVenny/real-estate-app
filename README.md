@@ -12,15 +12,11 @@
 
 ## ✨ Description
 
----
-
 ```sh
 전국의 부동산 매물들의 정보를 확인할 수 있는 웹앱 서비스
 ```
 
 ## :pushpin: Project Goal
-
----
 
 ```sh
 공공데이터 포털에서 개인프로젝트로 쓸만한 재밌는 데이터를 찾아보다가
@@ -33,8 +29,6 @@ vue를 이용해 SPA를 만드는 방법을 능동적으로 학습해볼 수 있
 
 ## :mag: Framing
 
----
-
 ![스크린샷 2022-03-07 오전 12 26 11](https://user-images.githubusercontent.com/78582073/156929771-1b1b2687-8cc7-4005-8271-9c42a53e8c48.png)
 
 Detail Framing
@@ -44,8 +38,6 @@ Detail Framing
 Framing
 
 ## :mag: Overview
-
----
 
 1. 유저 로그인 페이지 (User Login Page) (카카오 로그인)
 
