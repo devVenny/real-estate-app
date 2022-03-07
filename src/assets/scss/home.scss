@@ -1,0 +1,52 @@
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 465px;
+  .bg-img {
+    width: 100%;
+    flex-grow: 1;
+    height: 100%;
+    background-image: linear-gradient(
+      134deg,
+      #63c025 -5%,
+      #218850 56%,
+      #218850 56%
+    );
+    position: absolute;
+    top: 0;
+  }
+  .input-wrapper {
+    margin-top: 160px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .blur-wrapper h1 {
+      backdrop-filter: blur(2px);
+      font-weight: 200;
+      color: white;
+      margin-bottom: 35px;
+    }
+    .input-group {
+      display: flex;
+      backdrop-filter: blur(2px);
+      width: 100%;
+      height: 72px;
+      padding: 0 40px;
+      margin-top: 15px;
+      .btn-outline-secondary {
+        background-color: $color-dark-grass;
+        border: none;
+        color: white;
+        &:hover {
+          background-color: $color-grey;
+        }
+      }
+      .form-control {
+        padding-left: 30px;
+      }
+    }
+  }
+}

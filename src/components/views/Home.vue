@@ -31,6 +31,8 @@
     </div>
   </div>
 
+  <banner />
+
   <!-- Footer -->
   <!-- <div class="footer">
     <p>
@@ -42,7 +44,9 @@
 </template>
 
 <script>
+import Banner from "./Banner.vue";
 export default {
+  components: { Banner },
   name: "Home",
   data() {
     return {
@@ -63,73 +67,6 @@ export default {
 };
 </script>
 
-<style>
-.home {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 465px;
-}
-
-.bg-img {
-  width: 100%;
-  flex-grow: 1;
-  height: 100%;
-  background-image: linear-gradient(
-    134deg,
-    #63c025 -5%,
-    #218850 56%,
-    #218850 56%
-  );
-  position: absolute;
-  top: 0;
-}
-
-.input-wrapper {
-  margin-top: 160px;
-  width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input-group {
-  margin-top: 15px;
-}
-
-.blur-wrapper h1 {
-  backdrop-filter: blur(2px);
-  font-weight: 200;
-  color: white;
-  margin-bottom: 35px;
-}
-
-.btn-outline-secondary {
-  background-color: #005a27;
-  border: none;
-  color: white;
-}
-
-.input-group {
-  display: flex;
-  backdrop-filter: blur(2px);
-  width: 100%;
-  height: 72px;
-  padding: 0 40px;
-}
-
-.form-control {
-  padding-left: 30px;
-}
-
-/* Footer */
-.footer {
-  background-color: var(--color-dark-grass);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  color: white;
-}
+<style lang="scss">
+@import "../../assets/scss/home.scss";
 </style>
