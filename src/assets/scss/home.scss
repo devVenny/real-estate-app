@@ -50,3 +50,34 @@
     }
   }
 }
+
+.banner {
+  background-color: $color-light-grey;
+  padding: 30px 0;
+  margin: 30px auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .description h6 {
+    color: $color-grey;
+    font-weight: 200;
+  }
+
+  .banner-button {
+    all: unset;
+    cursor: pointer;
+    background-color: $color-dark-grass;
+    color: $color-snow;
+    border-radius: 4px;
+    padding: 0px 14px;
+    height: 45px;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: $color-grey2;
+      color: black;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 <template>
-  <div class="ban">
+  <div class="banner">
     <div class="description">
       <h3>간편한 부동산 계약, 죽방</h3>
-      <h5>지금 가입하면 10가지 혜택이? 점점 혜택이 줄어들어요🥲</h5>
+      <h6>지금 가입하면 10가지 혜택이? 서두르세요!</h6>
     </div>
-    <button class="banner-signIn">혜택 받으러 가기</button>
+    <button class="banner-button">혜택 받으러 가기</button>
   </div>
   <!-- <div class="banner" v-if="popUp === true">
     <h3>지금 결제하면 {{ discountPer }}% 할인!</h3>
@@ -33,7 +33,6 @@ export default {
 };
 </script>
 
-<style>
-.ban {
-}
+<style lang="scss">
+@import "../../assets/scss/home.scss";
 </style>
