@@ -32,6 +32,7 @@
   </div>
 
   <banner />
+  <info />
 
   <!-- Footer -->
   <!-- <div class="footer">
@@ -45,8 +46,10 @@
 
 <script>
 import Banner from "./Banner.vue";
+import Info from "./Info.vue";
+
 export default {
-  components: { Banner },
+  components: { Banner, Info },
   name: "Home",
   data() {
     return {

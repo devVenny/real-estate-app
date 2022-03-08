@@ -1,9 +1,11 @@
+// Home
 .home {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 465px;
+
   .bg-img {
     width: 100%;
     flex-grow: 1;
@@ -51,6 +53,7 @@
   }
 }
 
+// Baneer
 .banner {
   background-color: $color-light-grey;
   padding: 30px 0;
@@ -78,6 +81,54 @@
     &:hover {
       background-color: $color-grey2;
       color: black;
+    }
+  }
+}
+
+// Info
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  .info-column {
+    padding: 20px;
+    width: 250px;
+    position: relative;
+
+    .column_top {
+      font-size: $size-s;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      width: 45px;
+      padding: 6px 8px;
+      background-color: $color-light-grey;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 200;
+      text-align: center;
+      color: $color-grey;
+    }
+    .column_board {
+      margin-top: 6px;
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-smoke;
+      }
+
+      .post {
+        margin: 18px 0px;
+        font-size: $size-xs;
+      }
     }
   }
 }
