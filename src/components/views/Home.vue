@@ -35,13 +35,13 @@
   <info />
 
   <!-- Footer -->
-  <!-- <div class="footer">
-    <p>
+  <footer class="footer">
+    <div>
       <span>서비스 개발자. 이형섭</span><br />
       <span>이메일. hyungsup42134@gmail.com</span><br />
       <span>Copyright 2022. devVenny. All Rights Reserved.</span>
-    </p>
-  </div> -->
+    </div>
+  </footer>
 </template>
 
 <script>

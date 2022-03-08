@@ -132,3 +132,17 @@
     }
   }
 }
+
+// Footer
+.footer {
+  background-color: $color-dark-grey;
+  width: 100%;
+  color: rgb(160, 160, 160);
+  padding: 60px 100px;
+  div span {
+    font-size: $size-xs;
+    font-weight: 200;
+    display: inline-block;
+    margin: 6px 0px;
+  }
+}
