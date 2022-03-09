@@ -25,7 +25,7 @@
             sendInputValue();
           "
         >
-          Button
+          검색
         </button>
       </div>
     </div>
@@ -47,6 +47,7 @@
 <script>
 import Banner from "./Banner.vue";
 import Info from "./Info.vue";
+import axios from "axios";
 
 export default {
   components: { Banner, Info },
@@ -54,6 +55,7 @@ export default {
   data() {
     return {
       locationName: "",
+      locationCode: null,
     };
   },
   methods: {
@@ -61,12 +63,30 @@ export default {
       this.locationName = val;
     },
     moveToMap() {
-      this.$router.push("/product");
+      // this.$router.push("/product");
     },
     sendInputValue() {
-      this.emitter.emit("sendInputValue", this.locationName);
+      // console.log(this.locationName);
+      // this.emitter.emit("sendInputValue", this.locationName);
     },
   },
+  created() {
+    const config = {
+      API_KEY:
+        "	gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D",
+      baseUrl: "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList",
+    };
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/${config.baseUrl}?ServiceKey=${config.API_KEY}&type=xml&pageNo=1&numOfRows=3&flag=Y&locatadd_nm=서울특별시`
+      )
+      .then((res) => console.log(res));
+  },
+  // watch: {
+  //   locationName: function (val) {
+  //     console.log("change location name", val);
+  //   },
+  // },
 };
 </script>
 

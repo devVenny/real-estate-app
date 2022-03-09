@@ -42,8 +42,9 @@
         background-color: $color-dark-grass;
         border: none;
         color: white;
+        padding: 0px 40px;
         &:hover {
-          background-color: $color-grey;
+          background-color: #00692e;
         }
       }
       .form-control {
@@ -98,6 +99,7 @@
 
     .column_top {
       font-size: $size-s;
+      font-weight: 600;
       display: flex;
       justify-content: space-between;
       margin: 0;

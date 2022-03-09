@@ -9,8 +9,8 @@
 
   <div class="map-area">
     <!-- Harbor List -->
-    <div class="harbors">
-      <div
+    <div class="product">
+      매물 리스트<!-- <div
         class="harbor"
         @click="showOnMap(harbor)"
         v-for="(harbor, i) in harbors"
@@ -18,7 +18,7 @@
         :class="{ active: harbor === activeHarbor }"
       >
         {{ harbor.place }}
-      </div>
+      </div> -->
     </div>
 
     <!-- Map -->
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import api from "../../service/api";
 import KakaoMap from "../map/KakaoMap.vue";
 import MarkerHandler from "../map/marker-handler";
 
@@ -72,9 +71,9 @@ export default {
         this.activeHarbor = harbor;
       },
     }); // data를 담은 생성자 함수 생성
-    api.harbor.all((res) => {
-      this.harbors = res.harbors;
-    });
+    // api.harbor.all((res) => {
+    //   this.harbors = res.harbors;
+    // });
     // Create markers
     this.markers.add(this.harbors, (harbor) => {
       return { lat: harbor.lat, lng: harbor.lng };

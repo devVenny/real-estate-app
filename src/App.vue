@@ -2,8 +2,8 @@
   <!--  Header -->
   <div class="header">
     <div class="header-nav">
-      <button @click="$router.push('/')">Home</button>
-      <button @click="$router.push('/product')">Product</button>
+      <button @click="$router.push('/')">홈</button>
+      <button @click="$router.push('/product')">지도</button>
     </div>
   </div>
 
@@ -26,6 +26,9 @@ export default {
       }
       return { datas: this.datas };
     },
+  },
+  created() {
+    console.log("hi");
   },
 };
 </script>
