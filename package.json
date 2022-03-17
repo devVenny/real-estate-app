@@ -16,8 +16,11 @@
     "gh-pages": "^3.2.3",
     "mitt": "^3.0.0",
     "vue": "^3.0.0",
+    "vue-jsonp": "^2.0.0",
     "vue-router": "^4.0.12",
-    "xml-js": "^1.6.11"
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23",
+    "xml2json": "^0.12.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

@@ -22,7 +22,7 @@
           id="button-addon2"
           @click="
             moveToMap();
-            sendInputValue();
+            setLocationName();
           "
         >
           검색
@@ -54,42 +54,48 @@ export default {
   name: "Home",
   data() {
     return {
+      inputValue: "",
       locationName: "",
       locationCode: null,
     };
   },
   methods: {
     getInputValue(val) {
-      this.locationName = val;
+      this.inputValue = val;
     },
     moveToMap() {
       // this.$router.push("/product");
     },
-    sendInputValue() {
-      // console.log(this.locationName);
+    setLocationName() {
+      this.locationName = this.inputValue;
+
       // this.emitter.emit("sendInputValue", this.locationName);
     },
   },
-  created() {
-    const config = {
-      API_KEY:
-        "	gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D",
-      baseUrl: "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList",
-    };
-    axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/${config.baseUrl}?ServiceKey=${config.API_KEY}&type=xml&pageNo=1&numOfRows=3&flag=Y&locatadd_nm=서울특별시`
-      )
-      .then((res) => console.log(res));
+  watch: {
+    locationName: function (val) {
+      const config = {
+        API_KEY:
+          "gxzTp8PNaUIrpjNqKQhhCm956QVOTtPuMi1VFDpX9B1uBfU9Dl1yLPUpYM7m33l%2BkYKw4%2F%2FBAA2yiTV6ZKub9g%3D%3D",
+        baseUrl:
+          "http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList",
+      };
+      axios
+        .get(
+          `https://cors-anywhere.herokuapp.com/http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList?ServiceKey=${config.API_KEY}&type=xml&pageNo=1&numOfRows=3&flag=Y&locatadd_nm=${val}`
+        )
+        .then((res) => {
+          var parseString = require("xml2js").parseString;
+          parseString(res.data, function (err, result) {
+            // 지역명 -> 지역코드 변환
+            console.log(result.StanReginCd.row[0].region_cd[0].substring(0, 5));
+            // this.locationCode = result.StanReginCd.row[0].region_cd[0].substring(
+            //   0,
+            //   5
+            // );
+          });
+        });
+    },
   },
-  // watch: {
-  //   locationName: function (val) {
-  //     console.log("change location name", val);
-  //   },
-  // },
 };
 </script>
-
-<style lang="scss">
-@import "../../assets/scss/home.scss";
-</style>
